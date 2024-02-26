@@ -37,7 +37,7 @@ $sql = "UPDATE hotels SET
         WHERE id=$hotelId";
 
 if ($mysqli->query($sql) === TRUE) {
-    echo "Данные об отеле успешно обновлены";
+    echo "Данные об отеле успешно обновлены.";
 } else {
     echo "Ошибка при обновлении данных об отеле: " . $mysqli->error;
 }

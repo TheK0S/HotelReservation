@@ -46,7 +46,7 @@
     <form id="editHotelForm" method="POST">
       <div class="mb-3">
         <label for="hotelId" class="form-label">hotelId</label>
-        <input type="number" class="form-control" id="hotelId" name="hotelId" value="<?php echo $hotel['id'] ?>" required disabled>
+        <input type="number" class="form-control" id="hotelId" name="hotelId" value="<?php echo $hotel['id'] ?>" required readonly>
       </div>
       <div class="mb-3">
         <label for="name" class="form-label">Название отеля</label>
@@ -78,7 +78,7 @@
       </div>
       <div class="mb-3">
         <label for="reconstructionDate" class="form-label">Дата реконструкции</label>
-        <input type="date" class="form-control" id="reconstructionDate" name="reconstructionDate" value="<?php echo $hotel['reconstructionDate'] ?>" required>
+        <input type="date" class="form-control" id="reconstructionDate" name="reconstructionDate" value="<?php echo isset($hotel['reconstructionDate']) ? htmlspecialchars($hotel['reconstructionDate']) : '' ?>" required>
       </div>
       <div class="mb-3">
         <label for="imagePath" class="form-label">URL адрес изображения</label>
@@ -94,13 +94,13 @@
       </div>
       <div class="d-flex justify-content-between">
       <button type="submit" class="btn btn-primary">Сохранить</button>
-      <a href="/HotelReservation/admin/indexAdmin.php" class="btn btn-danger px-5">Отмена</a>
+      <a href="/HotelReservation/admin/indexAdmin.php" class="btn btn-danger px-4">Отмена</a>
       </div>
     </form>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/HotelReservation/admin/handlers/edit_hotel_admin_handler.php"></script>
+  <script src="/HotelReservation/admin/scripts/edit-hotel-admin.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
