@@ -87,7 +87,7 @@ $reservation_result = $mysqli->query($reservation_query);
                 <?php endif; ?>
             </div>
         </div>
-        <a href="logout.php" class="btn btn-primary mt-5">Выйти</a>
+        <a href="/HotelReservation/index.php" class="btn btn-primary mt-5">На главную</a>
     </div>
     <?php include '../components/footer.php' ?>
 </body>
