@@ -43,7 +43,6 @@
 ?>
     <div class="container">
         <h1 class="text-center">Редактирование фото номеров отеля <?php if($hotelResult->num_rows == 1) echo $hotelResult->fetch_assoc()['name']; ?></h1>
-        <form id="editHotelImagesForm" method="POST">
             <?php
             if($imagesResult->num_rows > 0){
                 $index = 1;
@@ -60,7 +59,7 @@
                             echo '</div>';
                             echo '<div class="d-flex justify-content-center">';
                                 echo '<a href="#" class="btn btn-warning me-5">✎ Изменить</a>';
-                                echo '<button OnClick="deleteImage('. $row['id'] .')" class="btn btn-danger">✖ Удалить</a>';
+                                echo '<button onclick="deleteImage('. $row['id'] .')" class="btn btn-danger">✖ Удалить</a>';
                             echo '</div>';
                         echo '</div>';
                         echo '<div class="col-md-2 col-sm-12">';
@@ -79,28 +78,8 @@
             <div class="d-flex justify-content-between">
                 <a href="/HotelReservation/admin/indexAdmin.php" class="btn btn-danger px-4">Отмена</a>
             </div>
-        </form>
     </div>
-<script>
-    function deleteImage(imageId) {
-    var confirmation = confirm("Вы уверены, что хотите удалить эту картинку?");
-        if (confirmation) {
-            $.ajax({
-                type: "POST",
-                url: "../handlers/delete_room_image_handler.php",
-                data: { id: imageId },
-                success: function(response) {
-                    // Обработка успешного удаления изображения
-                    alert("Изображение успешно удалено");
-                    location.reload();
-                },
-                error: function(xhr, status, error) {
-                    // Обработка ошибки удаления изображения
-                    console.error("Ошибка удаления изображения:", error);
-                }
-            });
-        }
-    }
-</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/HotelReservation/admin/scripts/remove-room-image-admin.js"></script>
 </body>
 </html>

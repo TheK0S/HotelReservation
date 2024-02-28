@@ -56,7 +56,7 @@
                         echo "<td class='text-center'>" . $row["phoneNumber"] . "</td>";
                         echo "<td class='text-center'>" . $row["reconstructionDate"] . "</td>";
                         echo "<td class='text-center'>" . $row["beachLine"] . "</td>";
-                        echo "<td class='text-center'><a href='./pages/edit_hotel_images_admin.php?hotelId=". $row['id'] ."' class='btn btn-success'>📸</a></td>";
+                        echo "<td class='text-center'><a href='./pages/list_hotel_images_admin.php?hotelId=". $row['id'] ."' class='btn btn-success'>📸</a></td>";
                         echo "<td class='text-center'><a href='./pages/edit_hotel_admin.php?hotelId=". $row['id'] ."' class='btn btn-warning'>✎</a></td>";
                         echo "<td class='text-center'><button onclick='deleteHotel(". $row['id'] .")' class='btn btn-danger'>✖</button></td>";
                         echo "</tr>";
