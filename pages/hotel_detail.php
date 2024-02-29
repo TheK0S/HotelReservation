@@ -69,7 +69,7 @@
   </div>
   <h6><?php echo $hotel['title']; ?></h6>
   <p><?php echo $hotel['text']; ?></p>
-  <div id="hotelImagesField" class="d-flex flex-wrap mb-3">
+  <div id="hotelImagesField" class="d-flex flex-wrap mb-3 justify-content-center">
     <?php 
       if($hotelImages->num_rows > 0){
         while($row = $hotelImages->fetch_assoc()){
