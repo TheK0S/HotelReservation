@@ -47,35 +47,31 @@
                 <input type="text" class="form-control" id="imagePath" name="imagePath" required>
             </div>
             <div class="d-flex justify-content-between">
-                <button type="submit" class="btn btn-primary">Добавить</button>
-                <a href="/HotelReservation/admin/indexAdmin.php" class="btn btn-danger px-4">Отмена</a>
+                <button type="submit" class="btn btn-success">Добавить</button>
+                <a href="/HotelReservation/admin/pages/list_hotel_images_admin.php?hotelId=<?php echo $hotelId ?>" class="btn btn-primary px-4">Назад</a>
             </div>
         </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
+            var hotelId = <?php echo $hotelId; ?>;
         // Обработчик отправки формы
             $('#editHotelImagesForm').submit(function(e){
-                e.preventDefault(); // Предотвращаем стандартное поведение формы
-
-                // Получаем данные из формы
+                e.preventDefault();
                 var formData = $(this).serialize();
 
                 // Отправляем AJAX-запрос
                 $.ajax({
-                    url: '/HotelReservation/admin/handlers/add_room_images_handler.php', // Путь к обработчику формы
+                    url: '/HotelReservation/admin/handlers/add_room_images_handler.php',
                     type: 'POST',
-                    data: formData, // Данные из формы
+                    data: formData,
                     success: function(response){
-                        // В случае успешного ответа от сервера
                         alert(response);
-                        window.location.href = "/HotelReservation/admin/pages/add_room_images_in_hotel.php?hotelId=" + $hotelId;
+                        window.location.href = "/HotelReservation/admin/pages/list_hotel_images_admin.php?hotelId=" + hotelId;
                     },
                     error: function(xhr, status, error){
-                        // В случае ошибки
-                        console.error(xhr.responseText); // Выводим сообщение об ошибке в консоль
-                        alert('Произошла ошибка при добавлении изображения'); // Отображаем сообщение об ошибке
+                        alert('Произошла ошибка при добавлении изображения');
                     }
                 });
             });

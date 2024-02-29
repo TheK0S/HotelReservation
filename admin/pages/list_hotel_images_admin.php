@@ -43,6 +43,9 @@
 ?>
     <div class="container">
         <h1 class="text-center">Редактирование фото номеров отеля <?php if($hotelResult->num_rows == 1) echo $hotelResult->fetch_assoc()['name']; ?></h1>
+        <div class="text-center my-3">
+            <a href="/HotelReservation/admin/pages/add_room_images_in_hotel.php?hotelId=<?php echo $hotelId ?>" class="btn btn-success">Добавить картинку</a>
+        </div>
             <?php
             if($imagesResult->num_rows > 0){
                 $index = 1;
@@ -58,7 +61,6 @@
                                 echo '<p class="form-control text-truncate">'. $row['imagePath'] .'</p>';
                             echo '</div>';
                             echo '<div class="d-flex justify-content-center">';
-                                echo '<a href="#" class="btn btn-warning me-5">✎ Изменить</a>';
                                 echo '<button onclick="deleteImage('. $row['id'] .')" class="btn btn-danger">✖ Удалить</a>';
                             echo '</div>';
                         echo '</div>';
@@ -76,7 +78,7 @@
             }
             ?>
             <div class="d-flex justify-content-between">
-                <a href="/HotelReservation/admin/indexAdmin.php" class="btn btn-danger px-4">Отмена</a>
+                <a href="/HotelReservation/admin/indexAdmin.php" class="btn btn-primary px-4">Назад</a>
             </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

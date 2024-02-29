@@ -29,6 +29,10 @@ input[type="date"]:focus{
     gap: 10px;
 }
 
+#hotelImagesField{
+    gap: 10px;
+}
+
 .cardImage{
     width: 200px;
     height: 150px;

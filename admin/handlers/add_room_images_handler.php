@@ -1,5 +1,4 @@
 <?php
-// Подключение к базе данных
 $mysqli = new mysqli("localhost", "root", "", "hotelDb");
 
 // Проверка соединения
