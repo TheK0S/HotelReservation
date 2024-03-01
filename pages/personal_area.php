@@ -68,6 +68,10 @@ $reservation_result = $mysqli->query($reservation_query);
             <p><strong>Дата регистрации:</strong> <?php echo $user_row['registerDate']; ?></p>
         </div>
         <div class="mt-3">
+            <a href="/HotelReservation/pages/change_personal_data.php" class="btn btn-primary me-3">Изменить личные данные</a>
+            <a href="/HotelReservation/pages/change_password.php" class="btn btn-primary">Сменить пароль</a>
+        </div>
+        <div class="mt-3">
             <h2 class="text-center mb-5">Мои заказы:</h2>
             <div class="d-flex flex-wrap reservation-wrapper">
                 <?php if ($reservation_result->num_rows > 0): ?>
