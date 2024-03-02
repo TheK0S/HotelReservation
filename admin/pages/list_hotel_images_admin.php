@@ -77,7 +77,7 @@
                 echo '</div>';
             }
             ?>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between mb-5">
                 <a href="/HotelReservation/admin/indexAdmin.php" class="btn btn-primary px-4">Назад</a>
             </div>
     </div>
